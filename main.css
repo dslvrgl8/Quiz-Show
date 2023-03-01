@@ -6,12 +6,26 @@ header {
     border: 2px solid black;
     display: flex;
     justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: blanchedalmond;
+    font-size: x-large;
 }
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
 
 main {
     border: 2px solid blue;
     height: 40%;
+    background-color: skyblue;
 }
+/* @font-face {
+    font-family: myFirstFont;
+    src: url(newake-regulat.woff);
+} */
 
 footer {
     border: 2px solid pink;
@@ -24,14 +38,25 @@ footer {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    background-color: lightpink;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.questionBox {
+.answerBox {
     border: 2px solid yellow;
     height: 200px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: x-large;
 }
 
 h1 {
@@ -40,6 +65,8 @@ h1 {
 
 .status {
     border: 2px solid purple;
+    font-size: 20px;
+
 }
 
 body {
@@ -48,3 +75,4 @@ body {
     padding: 60px;
     height: 100%;
 }
+
