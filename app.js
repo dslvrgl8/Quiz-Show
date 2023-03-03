@@ -6,8 +6,6 @@ const questionCount = document.querySelector('#questionCount');
 const questions = document.querySelector('#questions');
 const score = document.querySelector('#score');
 
-const lastQuestion = myQuestions.length - 1;
-
 var myQuestions = [
 {
     question: "Tupperware", 
@@ -110,3 +108,12 @@ var myQuestions = [
     correctAnswer: 'c'
 },
 ]   
+const lastQuestion = questions.length - 1;
+
+let startingQuestion = 0;
+
+function makeQuestion() {
+
+   let q =  myQuestions[startingQuestion];
+   
+}
