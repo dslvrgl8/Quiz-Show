@@ -11,6 +11,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id = 'container'></div>
+    <div id= "start" Start Quiz></div>
+    <div id = 'quiz' style = 'display: none'></div>
     <header>
         <img src="https://i.pinimg.com/originals/0d/82/23/0d8223071d8d419de52f8243c94f2290.gif">
         <h1>Pronunciation</h1>
@@ -25,25 +28,22 @@
         <img src="https://i.pinimg.com/originals/0d/82/23/0d8223071d8d419de52f8243c94f2290.gif">
     </header>
     <main>
-        <div class = 'screen'> Question
-        </div>
-        <div class = 'answerBox'>
-            <div class = 'answer1'> answer1 can go here
-                
-            </div>
+        <div class = 'question'> Question </div>
 
-            <div class = 'answer2'> answer2 can also go here
-                
-            </div>
-            <div class = 'answer3'> answer3 can go here
-                
-            </div>
+        <div class = 'choices'>
 
-            <div class = 'answer4'> answer4 can also go here
-                
-            </div>
+            <div class = 'choice' id = "a" onClick = "checkAnswer('a')"> answer1 can go here</div>
+
+            <div class = 'choice' id = "b" onClick = "checkAnswer('b')"> answer2 can go here</div>
+
+            <div class = 'choice' id = "c" onClick = "checkAnswer('c')"> answer3 can go here</div>
+
+            <div class = 'choice' id = "d" onClick = "checkAnswer('d')"> answer4 can go here</div>
+
         </div>
+
     </main>
+
     <footer>Dylan Silverglate - 2023®</footer>
 </body>
 </html>

@@ -31,7 +31,7 @@ footer {
     border: 2px solid pink;
 }
 
-.screen {
+.question {
     border: 2px solid red;
     height: 400px;
     width: 70%;
@@ -45,7 +45,7 @@ footer {
     justify-content: center;
 }
 
-.answerBox {
+.choices {
     border: 2px solid yellow;
     height: 200px;
     width: 80%;
