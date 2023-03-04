@@ -6,8 +6,9 @@ const questionCount = document.querySelector('.questionCount');
 const questions = document.querySelector('.questions');
 const score = document.querySelector('.score');
 const questionDisplay = document.querySelector('.question')
-const rightAnswer = document.querySelector('.result')
+const resultBar = document.querySelector('.result')
 const choices = document.querySelectorAll('.choice')
+const rightAnswer = document.querySelectorAll('.correctAnswer')
 console.log(choices)
 
 const myQuestions = [
@@ -133,11 +134,20 @@ function makeQuestion() {
 makeQuestion();
 
 const choicesArray = [...choices]; //sets up array to loop through
+
 choicesArray.map(choice => {
     choice.addEventListener('click', function() {
+    console.log(this)
+    })
+console.log({choice})
+})
+
+const answersArray = [...correctAnswer]; //set up answer array to loop through
+
+answersArray.map(correctAnswer => {
+    correctAnswer.addEventListener('click', function() {
         console.log(this)
     })
-    console.log({choice})
 })
     
 console.log(rightAnswer)
