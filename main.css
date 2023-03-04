@@ -21,6 +21,7 @@ main {
     border: 2px solid blue;
     height: 40%;
     background-color: skyblue;
+    position: relative;
 }
 /* @font-face {
     font-family: myFirstFont;
@@ -40,6 +41,12 @@ footer {
     margin-top: 20px;
     background-color: lightpink;
     font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,3 +83,12 @@ body {
     height: 100%;
 }
 
+#next {
+    display: flex;
+    width: 70px;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    padding: 5px;
+}

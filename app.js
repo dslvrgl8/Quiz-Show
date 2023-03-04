@@ -1,12 +1,16 @@
-const answer1 = document.getElementById('a');
-const answer2 = document.getElementById('b');
-const answer3 = document.getElementById('c');
-const answer4 = document.getElementById('d');
-const questionCount = document.querySelector('#questionCount');
-const questions = document.querySelector('#questions');
-const score = document.querySelector('#score');
+const answer1 = document.querySelector('#a');
+const answer2 = document.querySelector('#b');
+const answer3 = document.querySelector('#c');
+const answer4 = document.querySelector('#d');
+const questionCount = document.querySelector('.questionCount');
+const questions = document.querySelector('.questions');
+const score = document.querySelector('.score');
+const questionDisplay = document.querySelector('.question')
+const rightAnswer = document.querySelector('.result')
+const choices = document.querySelectorAll('.choice')
+console.log(choices)
 
-var myQuestions = [
+const myQuestions = [
 {
     question: "Tupperware", 
     answers: {
@@ -108,12 +112,33 @@ var myQuestions = [
     correctAnswer: 'c'
 },
 ]   
-const lastQuestion = questions.length - 1;
+const lastQuestion = myQuestions.length - 1;
 
-let startingQuestion = 0;
+let currentQuestion = 0;
+
+//add next button, create variable, use javavscript to grab from HTML, attach event listener to button
+
+//call next button, call function, update
 
 function makeQuestion() {
-
-   let q =  myQuestions[startingQuestion];
-   
+    console.log(questionDisplay)
+    questionDisplay.innerText = myQuestions[currentQuestion].question
+    answer1.innerHTML = myQuestions[currentQuestion].answers.a
+    answer2.innerHTML = myQuestions[currentQuestion].answers.b
+    answer3.innerHTML = myQuestions[currentQuestion].answers.c
+    answer4.innerHTML = myQuestions[currentQuestion].answers.d
+    rightAnswer.innerHTML = myQuestions[currentQuestion].correctAnswer
 }
+
+makeQuestion();
+
+const choicesArray = [...choices]; //sets up array to loop through
+choicesArray.map(choice => {
+    choice.addEventListener('click', function() {
+        console.log(this)
+    })
+    console.log({choice})
+})
+    
+console.log(rightAnswer)
+console.log(choices)
