@@ -9,6 +9,7 @@ const questionDisplay = document.querySelector('.question')
 const resultBar = document.querySelector('.result')
 const choices = document.querySelectorAll('.choice')
 const rightAnswer = document.querySelectorAll('.correctAnswer')
+
 console.log(choices)
 
 const myQuestions = [
@@ -20,7 +21,7 @@ const myQuestions = [
         c: 'Tub-er-wair', 
         d: 'Two-puh-wair'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'Tup-Uh-Wair'
 },
 {
     question: "Colonel",
@@ -115,7 +116,7 @@ const myQuestions = [
 ]   
 const lastQuestion = myQuestions.length - 1;
 
-let currentQuestion = 0;
+let currentQuestion = myQuestions[0];
 
 //add next button, create variable, use javavscript to grab from HTML, attach event listener to button
 
@@ -123,12 +124,12 @@ let currentQuestion = 0;
 
 function makeQuestion() {
     console.log(questionDisplay)
-    questionDisplay.innerText = myQuestions[currentQuestion].question
-    answer1.innerHTML = myQuestions[currentQuestion].answers.a
-    answer2.innerHTML = myQuestions[currentQuestion].answers.b
-    answer3.innerHTML = myQuestions[currentQuestion].answers.c
-    answer4.innerHTML = myQuestions[currentQuestion].answers.d
-    rightAnswer.innerHTML = myQuestions[currentQuestion].correctAnswer
+    questionDisplay.innerText = currentQuestion.question
+    answer1.innerHTML = currentQuestion.answers.a
+    answer2.innerHTML = currentQuestion.answers.b
+    answer3.innerHTML = currentQuestion.answers.c
+    answer4.innerHTML = currentQuestion.answers.d
+    rightAnswer.innerHTML = currentQuestion.correctAnswer
 }
 
 makeQuestion();
@@ -138,17 +139,15 @@ const choicesArray = [...choices]; //sets up array to loop through
 choicesArray.map(choice => {
     choice.addEventListener('click', function() {
     console.log(this)
+    console.log(`You Chose: ${this.innerText}`)
+    console.log(`Correct answer is: ${currentQuestion.correctAnswer}`)
+    if(this.innerText === currentQuestion.correctAnswer) {
+        console.log('You are correct!')
+        alert('Correct!!')
+    } else {
+        console.log('You are wrong')
+        alert('WRONG!!!')
+    }
     })
 console.log({choice})
 })
-
-const answersArray = [...correctAnswer]; //set up answer array to loop through
-
-answersArray.map(correctAnswer => {
-    correctAnswer.addEventListener('click', function() {
-        console.log(this)
-    })
-})
-    
-console.log(rightAnswer)
-console.log(choices)
