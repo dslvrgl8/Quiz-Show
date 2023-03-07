@@ -1,13 +1,17 @@
+// ----------VISUAL HTML ELEMENTS------------
+    // Buttons //
 const answer1 = document.querySelector('#a');
 const answer2 = document.querySelector('#b');
 const answer3 = document.querySelector('#c');
 const answer4 = document.querySelector('#d');
-const questionCount = document.querySelector('.questionCount');
+const next = document.querySelector('#next');
+
+const questionCount = document.querySelector('#questionCount');
 const questions = document.querySelector('.questions');
-const score = document.querySelector('.score');
-const questionDisplay = document.querySelector('.question')
-const resultBar = document.querySelector('.result')
-const choices = document.querySelectorAll('.choice')
+const score = document.querySelector('#score');
+const questionDisplay = document.querySelector('.question');
+const resultBar = document.querySelector('.result');
+const choices = document.querySelectorAll('.choice');
 const rightAnswer = document.querySelectorAll('.correctAnswer')
 
 console.log(choices)
@@ -21,7 +25,7 @@ const myQuestions = [
         c: 'Tub-er-wair', 
         d: 'Two-puh-wair'
     },
-    correctAnswer: 'Tup-Uh-Wair'
+    correctAnswer: 'a'
 },
 {
     question: "Colonel",
@@ -94,7 +98,7 @@ const myQuestions = [
     correctAnswer: 'c'
 },
 {
-    question: "Picture of a soda bottle",
+    question: "Bubly, sugary, beverage?",
     answers: {
         a: 'Soda',
         b: 'Pop',
@@ -116,7 +120,17 @@ const myQuestions = [
 ]   
 const lastQuestion = myQuestions.length - 1;
 
-let currentQuestion = myQuestions[0];
+let i = 0
+
+let currentQuestion = myQuestions[i];
+
+
+let userScore = 0
+
+let questionNumber = 1
+
+next.disabled = true
+
 
 //add next button, create variable, use javavscript to grab from HTML, attach event listener to button
 
@@ -130,6 +144,7 @@ function makeQuestion() {
     answer3.innerHTML = currentQuestion.answers.c
     answer4.innerHTML = currentQuestion.answers.d
     rightAnswer.innerHTML = currentQuestion.correctAnswer
+    resultBar.style.display = 'none'
 }
 
 makeQuestion();
@@ -138,16 +153,51 @@ const choicesArray = [...choices]; //sets up array to loop through
 
 choicesArray.map(choice => {
     choice.addEventListener('click', function() {
+    // Disable all answer buttons, and undisable the next button
     console.log(this)
     console.log(`You Chose: ${this.innerText}`)
     console.log(`Correct answer is: ${currentQuestion.correctAnswer}`)
-    if(this.innerText === currentQuestion.correctAnswer) {
-        console.log('You are correct!')
-        alert('Correct!!')
+
+    if(this.id === currentQuestion.correctAnswer) {
+        console.log('You are correct!');
+        alert('Correct!!');
+        userScore += 1;
+        score.innerText = userScore;
+        answer1.disabled = true;
+        answer2.disabled = true;
+        answer3.disabled = true;
+        answer4.disabled = true;
+        next.disabled = false;
+
     } else {
-        console.log('You are wrong')
-        alert('WRONG!!!')
+        console.log('You are wrong');
+        alert('WRONG!!!');
+        answer1.disabled = true;
+        answer2.disabled = true;
+        answer3.disabled = true;
+        answer4.disabled = true;
+        next.disabled = false;
     }
     })
 console.log({choice})
+})
+
+// ----------- Adds function to next
+next.addEventListener('click', function() {
+   i++
+   if ( i <= lastQuestion) {
+    currentQuestion = myQuestions[i];
+    makeQuestion();
+    questionNumber ++;
+    questionCount.innerText = questionNumber;
+    choicesArray.map(choice => {
+    next.disabled = true
+    choice.disabled = false
+    })
+    } else {
+        resultBar.style.display = 'block';
+        resultBar.innerHTML = `You got ${userScore} out of ${myQuestions.length} correct!`;
+        questionCount.style.display = 'none'; // hide question number display
+        next.style.display = 'none'; // hide next button
+        }
 })
