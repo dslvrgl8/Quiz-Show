@@ -13,6 +13,7 @@ const questionDisplay = document.querySelector('.question');
 const resultBar = document.querySelector('.result');
 const choices = document.querySelectorAll('.choice');
 const rightAnswer = document.querySelectorAll('.correctAnswer')
+const overlay = document.querySelector('.overlay')
 
 console.log(choices)
 
@@ -100,10 +101,10 @@ const myQuestions = [
 {
     question: "Bubly, sugary, beverage?",
     answers: {
-        a: 'Soda',
-        b: 'Pop',
-        c: 'Cola',
-        d: 'Sodie pop'
+        a: '   Soda   ',
+        b: '   Pop   ',
+        c: '   Cola   ',
+        d: '   Sodie pop   '
     },
     correctAnswer: 'a'
 },
@@ -135,6 +136,11 @@ next.disabled = true
 //add next button, create variable, use javavscript to grab from HTML, attach event listener to button
 
 //call next button, call function, update
+
+function startGame () {
+    // make button, oncle clicked it will add hidden to overlay class, then call make question
+    makeQuestion()
+}
 
 function makeQuestion() {
     console.log(questionDisplay)
