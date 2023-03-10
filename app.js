@@ -6,6 +6,7 @@ const answer3 = document.querySelector('#c');
 const answer4 = document.querySelector('#d');
 const next = document.querySelector('#next');
 const begin = document.querySelector('#Begin')
+const message = document.querySelector('message')
 
 const questionCount = document.querySelector('#questionCount');
 const questions = document.querySelector('.questions');
@@ -173,7 +174,7 @@ choicesArray.map(choice => {
 
     if(this.id === currentQuestion.correctAnswer) {
         console.log('You are correct!');
-        alert('Correct!!');
+        choice.style.color = 'green';
         userScore += 1;
         score.innerText = userScore;
         answer1.disabled = true;
@@ -184,7 +185,7 @@ choicesArray.map(choice => {
 
     } else {
         console.log('You are wrong');
-        alert('WRONG!!!');
+        choice.style.color = 'red';
         answer1.disabled = true;
         answer2.disabled = true;
         answer3.disabled = true;
@@ -206,11 +207,13 @@ next.addEventListener('click', function() {
     choicesArray.map(choice => {
     next.disabled = true
     choice.disabled = false
+    choice.style.color = 'black'
     })
     } else {
         resultBar.style.display = 'block';
         resultBar.innerHTML = `You got ${userScore} out of ${myQuestions.length} correct!`;
         questionCount.style.display = 'none'; // hide question number display
         next.style.display = 'none'; // hide next button
+        question.style.visibility = 'hidden'
         }
 })

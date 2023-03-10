@@ -37,14 +37,21 @@ img {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    width: 600px
+    width: 600px;
+    position: relative;
   }
 
   #point {
     border-radius: 4px;
     padding: 5px;
-    width: 600px
+    width: 600px;
+    position: relative;
   }
+
+h2 {
+    position: relative;
+    margin-bottom: 85px;
+}
 
 main {
     border: 2px solid blue;
@@ -79,7 +86,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    margin-left: 521px;
 }
 
 .choices {
@@ -125,16 +132,20 @@ body {
     padding: 5px;
 }
 
-#Begin {
+#Begin { 
     padding: 10px 24px;
     font-size: 20px;
     background-color: #4CAF50;
-    text-align: center;
+    text-align: right;
     text-decoration: none;
     color: white;
-    display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-left: 341px;
-    margin-right: 300px;
+    align-items: center;
+    margin-top: 33px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
