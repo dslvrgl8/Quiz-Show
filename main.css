@@ -86,7 +86,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 521px;
+    margin-left: 421px;
+    font-size: 30px;
 }
 
 .choices {
@@ -148,4 +149,14 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+#restart {
+    display: flex;
+    width: 70px;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    padding: 5px;
 }

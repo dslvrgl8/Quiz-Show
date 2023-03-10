@@ -118,7 +118,7 @@ const myQuestions = [
         c: 'llan-vire-pooll-gwin-gill-gore-ger-ih-queern-drorb-ooll-llandy-silio-gore-gore-goch',
         d: 'Llan-fair-pwllg-wyngy-ll-goge-rych-wyrn-drob-w-llll-anty-silio-go-go-goch'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'c',
 },
 ]   
 const lastQuestion = myQuestions.length - 1;
@@ -133,6 +133,8 @@ let userScore = 0
 let questionNumber = 1
 
 next.disabled = true
+
+restart.disabled = true
 
 
 //add next button, create variable, use javavscript to grab from HTML, attach event listener to button
@@ -159,6 +161,9 @@ function makeQuestion() {
     answer4.innerHTML = currentQuestion.answers.d
     rightAnswer.innerHTML = currentQuestion.correctAnswer
     resultBar.style.display = 'none'
+    if(i === 9) {
+        questionDisplay.style.fontSize = '34px'
+    }
 }
 
 makeQuestion();
@@ -214,6 +219,11 @@ next.addEventListener('click', function() {
         resultBar.innerHTML = `You got ${userScore} out of ${myQuestions.length} correct!`;
         questionCount.style.display = 'none'; // hide question number display
         next.style.display = 'none'; // hide next button
-        question.style.visibility = 'hidden'
+        restart.disabled = false
         }
 })
+
+restart.addEventListener('click', function() {
+    window.location.reload()
+})
+
