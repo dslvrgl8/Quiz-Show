@@ -5,6 +5,7 @@ const answer2 = document.querySelector('#b');
 const answer3 = document.querySelector('#c');
 const answer4 = document.querySelector('#d');
 const next = document.querySelector('#next');
+const begin = document.querySelector('#Begin')
 
 const questionCount = document.querySelector('#questionCount');
 const questions = document.querySelector('.questions');
@@ -139,8 +140,14 @@ next.disabled = true
 
 function startGame () {
     // make button, oncle clicked it will add hidden to overlay class, then call make question
-    makeQuestion()
+    begin.addEventListener('click', function () {
+        overlay.style.visibility = 'hidden'
+        makeQuestion()
+    })
+    
 }
+
+startGame();
 
 function makeQuestion() {
     console.log(questionDisplay)
