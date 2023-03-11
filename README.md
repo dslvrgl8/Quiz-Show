@@ -6,7 +6,7 @@ Can you talk good? Do you know how to say things? Well this is the quiz for you.
 
 My project is going to be a quiz show. I will present different words and ask about the correct pronunciation of each word. Each will have 4 possible choices that the player must select from. Their score will depend on how they rank at the end of the quiz.
 
-## Link : https://quiz-show-iota.vercel.app/
+## Link : https://dslvrgl8.github.io/Quiz-Show/
 
 
 ### **How to Play**
